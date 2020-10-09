@@ -1,0 +1,6 @@
+framework module Pods_HouseFlip {
+  umbrella header "Pods-HouseFlip-umbrella.h"
+
+  export *
+  module * { export * }
+}
