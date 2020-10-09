@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>508644000314-tkrcsjg4f9u2his0s9oh4cv701h43av2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.508644000314-tkrcsjg4f9u2his0s9oh4cv701h43av2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkPQoGTCbqL5d9E749gg8SRROlKn572Cw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>508644000314</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ShawnAshton.HouseFlip</string>
+	<key>PROJECT_ID</key>
+	<string>houseflip-firestore</string>
+	<key>STORAGE_BUCKET</key>
+	<string>houseflip-firestore.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:508644000314:ios:dae2efa4e46a2764a5eb03</string>
+	<key>DATABASE_URL</key>
+	<string>https://houseflip-firestore.firebaseio.com</string>
+</dict>
+</plist>
