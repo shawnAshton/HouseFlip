@@ -8,5 +8,6 @@ target 'HouseFlip' do
   # Pods for HouseFlip
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestoreSwift'
 
 end
