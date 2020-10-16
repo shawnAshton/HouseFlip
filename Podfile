@@ -9,5 +9,8 @@ target 'HouseFlip' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
 	pod 'FirebaseFirestoreSwift'
+	pod 'TinyConstraints'
+	pod 'KMPlaceholderTextView'
+	pod 'LBTATools'
 
 end

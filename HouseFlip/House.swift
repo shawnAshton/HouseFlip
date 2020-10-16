@@ -19,6 +19,8 @@ struct House {
     var price:String
     //var purchaseDateAsTimeStamp:Date
     var purchaseDate:Timestamp
+    var houseNotes:String
+    var category:Int
     
     var dictionary:[String:Any]{
         return [
@@ -26,7 +28,9 @@ struct House {
             "address": address,
             "owner": owner,
             "price": price,
-            "purchaseDate" : purchaseDate
+            "purchaseDate" : purchaseDate,
+            "houseNotes" : houseNotes,
+            "category": category
         ]
     }
 }
@@ -37,8 +41,11 @@ extension House:documentSerializable{
               let address = dictionary["address"] as? String,
               let owner = dictionary["owner"] as? String,
               let price = dictionary["price"] as? String,
-              let purchaseDate = dictionary["purchaseDate"] as? Timestamp else {return nil}
+              let purchaseDate = dictionary["purchaseDate"] as? Timestamp,
+              let houseNotes = dictionary["houseNotes"] as? String,
+              let category = dictionary["category"] as? Int
+            else {return nil}
         
-        self.init(id:id, address:address, owner:owner, price:price, purchaseDate:purchaseDate)
+        self.init(id:id, address:address, owner:owner, price:price, purchaseDate:purchaseDate, houseNotes:houseNotes, category:category)
     }
 }
