@@ -19,6 +19,9 @@
 		73980DBC251A9D8A00146164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73980DBB251A9D8A00146164 /* GoogleService-Info.plist */; };
 		73A2AB4A252D0D3700BC80E7 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2AB48252D0D3700BC80E7 /* MyTableViewCell.swift */; };
 		73A2AB4B252D0D3700BC80E7 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A2AB49252D0D3700BC80E7 /* MyTableViewCell.xib */; };
+		73D7804A2554B0BF00E740A3 /* EditTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D780492554B0BF00E740A3 /* EditTasksViewController.swift */; };
+		73DF2E76254C9E3100B36A11 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF2E75254C9E3100B36A11 /* TasksViewController.swift */; };
+		73DF2E79254CC2F100B36A11 /* inputTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */; };
 		7A0165E5C0918B45AD765A20 /* Pods_HouseFlip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D74AF949F54186BA3A3540 /* Pods_HouseFlip.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,9 @@
 		73980DBB251A9D8A00146164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73A2AB48252D0D3700BC80E7 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		73A2AB49252D0D3700BC80E7 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		73D780492554B0BF00E740A3 /* EditTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTasksViewController.swift; sourceTree = "<group>"; };
+		73DF2E75254C9E3100B36A11 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputTaskViewController.swift; sourceTree = "<group>"; };
 		81D74AF949F54186BA3A3540 /* Pods_HouseFlip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseFlip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD356AC972BF2697F595FEC /* Pods-HouseFlip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFlip.release.xcconfig"; path = "Target Support Files/Pods-HouseFlip/Pods-HouseFlip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +97,9 @@
 				734144DF252D27F100CF2A96 /* HouseEditViewController.swift */,
 				738BB3AA2522A10000CE23E7 /* House.swift */,
 				73980DA8251A9B2300146164 /* Main.storyboard */,
+				73D780492554B0BF00E740A3 /* EditTasksViewController.swift */,
+				73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */,
+				73DF2E75254C9E3100B36A11 /* TasksViewController.swift */,
 				73980DAB251A9B2400146164 /* Assets.xcassets */,
 				73980DAD251A9B2400146164 /* LaunchScreen.storyboard */,
 				73980DB0251A9B2400146164 /* Info.plist */,
@@ -226,12 +235,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				73980DA7251A9B2300146164 /* ViewController.swift in Sources */,
+				73DF2E76254C9E3100B36A11 /* TasksViewController.swift in Sources */,
+				73DF2E79254CC2F100B36A11 /* inputTaskViewController.swift in Sources */,
 				73980DA3251A9B2300146164 /* AppDelegate.swift in Sources */,
 				738BB3AB2522A10000CE23E7 /* House.swift in Sources */,
 				73980DA5251A9B2300146164 /* SceneDelegate.swift in Sources */,
 				738BB3B22522ADB200CE23E7 /* InputHouseViewController.swift in Sources */,
 				73A2AB4A252D0D3700BC80E7 /* MyTableViewCell.swift in Sources */,
 				734144E0252D27F100CF2A96 /* HouseEditViewController.swift in Sources */,
+				73D7804A2554B0BF00E740A3 /* EditTasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

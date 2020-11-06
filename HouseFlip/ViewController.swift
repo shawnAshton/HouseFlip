@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         db.collection("ShawnTest").getDocuments() {
             snapshot, error in
             if let error = error {
-                print("\(error.localizedDescription)")
+                print("***************************************************\(error.localizedDescription)")
             }else{
                 //fills the house array with documents from the database
                 self.houseArrays[3] = snapshot!.documents.compactMap({House(dictionary: $0.data())})

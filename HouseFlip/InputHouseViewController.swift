@@ -40,6 +40,7 @@ class InputHouseViewController: UIViewController, UITextViewDelegate, UITextFiel
         let myDoc = db.collection("ShawnTest").document()
         dic["id"] = myDoc.documentID    
         myDoc.setData(dic, merge: true)
+        //let taskDoc = db.collection("ShawnTest").document(myDoc.documentID).collection("tasks")
         self.performSegue(withIdentifier: "toListSegue", sender: self)
     }
     

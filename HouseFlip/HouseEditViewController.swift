@@ -53,6 +53,17 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
         db.collection("ShawnTest").document(myDict["id"] as! String).setData(dic, merge: true)
     }
     
+    @IBAction func goToTasks(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToTasks", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToTasks" {
+            let destinationController = segue.destination as! TasksViewController
+            destinationController.myDict = myDict
+        }
+    }
+    
     //changes screens
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "goBack", sender: self)
