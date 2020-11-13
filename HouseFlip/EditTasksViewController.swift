@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Firebase //needed for casting item from dictionary to timestamp
 
 class EditTasksViewController: UIViewController {
 
-    var myDict:[String:Any] = [:]
+    var myDict:[String:Any] = [:] // for house
+    var taskDict:[String:Any] = [:]
+    
+    
+    @IBOutlet weak var dueDate: UIDatePicker!
+    @IBOutlet weak var taskDescription: UITextView!
     
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "backToTasks", sender: self)
@@ -22,9 +28,27 @@ class EditTasksViewController: UIViewController {
         }
     }
     
+    @IBAction func updateTasks(_ sender: Any) {
+        var dic:[String:Any] = [:]
+        //adds the task to the tasks collection of the specific home.
+        dic["dueDate"] = dueDate.date
+        dic["taskDescription"] = taskDescription.text!
+        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document(taskDict["id"] as! String).setData(dic, merge: true)
+    }
+    
+    @IBAction func deleteTask(_ sender: Any) {
+        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document(taskDict["id"] as! String).delete()
+        self.performSegue(withIdentifier: "backToTasks", sender: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        taskDescription.text! = taskDict["taskDescription"] as! String
+        let tsDate = taskDict["dueDate"] as! Timestamp //gets the firestore timestamp
+        let myDate:Date = tsDate.dateValue() //converts to a swift date object
+        dueDate.date = myDate
     }
 
 }

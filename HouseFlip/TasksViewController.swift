@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Firebase //needed for casting item from dictionary to timestamp
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var myTableView: UITableView!
     var myDict:[String:Any] = [:]
     var myTasks = [[String:Any]]()
+    var indexOfTask = -1
     
     //these 3 functions are for the tableview
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,7 +25,16 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.indentifier, for: indexPath) as! MyTableViewCell
         //myTasks[indexPath.row] is a dictionary
-        cell.configure(with: myTasks[indexPath.row]["taskDescription"] as! String, with: indexPath.row)
+        let tsDate = myTasks[indexPath.row]["dueDate"] as! Timestamp //gets the firestore timestamp
+        let myDate:Date = tsDate.dateValue() //converts to a swift date object
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        var cellTitle:String = (myTasks[indexPath.row]["taskDescription"] as! String)
+        if cellTitle.count > 30{
+            cellTitle = cellTitle.prefix(30) + "..."
+        }
+        cellTitle = formatter.string(from: myDate) + "  " + cellTitle
+        cell.configure(with: cellTitle, with: indexPath.row)
         cell.delegate = self
         return cell
     }
@@ -57,13 +68,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if segue.identifier == "toEditTasks" {
             let destinationController = segue.destination as! EditTasksViewController
             destinationController.myDict = myDict
+            destinationController.taskDict = myTasks[indexOfTask]
         }
     }
     
     //This function loads the tasks into the tableView
     func loadTasks()
     {
-        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").getDocuments() {
+        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").order(by: "dueDate").getDocuments() {
             snapshot, error in
             if let error = error {
                 print("***************************************************\(error.localizedDescription)")
@@ -85,6 +97,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 extension TasksViewController: MyTableViewCellDelegate{
     func didTapCell(with index: Int) {
         print("tapped \(index)")
+        indexOfTask = index
         self.performSegue(withIdentifier: "toEditTasks", sender: self)
     }
 }

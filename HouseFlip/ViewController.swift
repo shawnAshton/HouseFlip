@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for _ in 0...3 {
             self.houseArrays.append([House]())
         }
-        db.collection("ShawnTest").getDocuments() {
+        db.collection("ShawnTest").order(by: "address").getDocuments() {
             snapshot, error in
             if let error = error {
                 print("***************************************************\(error.localizedDescription)")

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7304705A255E085800A607B0 /* costsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73047059255E085800A607B0 /* costsViewController.swift */; };
+		7304705D255E087600A607B0 /* inputCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304705C255E087600A607B0 /* inputCostsViewController.swift */; };
+		73047060255E088700A607B0 /* editCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304705F255E088700A607B0 /* editCostsViewController.swift */; };
 		734144E0252D27F100CF2A96 /* HouseEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734144DF252D27F100CF2A96 /* HouseEditViewController.swift */; };
 		738BB3AB2522A10000CE23E7 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BB3AA2522A10000CE23E7 /* House.swift */; };
 		738BB3B22522ADB200CE23E7 /* InputHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BB3B12522ADB200CE23E7 /* InputHouseViewController.swift */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		63EFA74254A6776A0F9FEFCF /* Pods-HouseFlip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFlip.debug.xcconfig"; path = "Target Support Files/Pods-HouseFlip/Pods-HouseFlip.debug.xcconfig"; sourceTree = "<group>"; };
+		73047059255E085800A607B0 /* costsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = costsViewController.swift; sourceTree = "<group>"; };
+		7304705C255E087600A607B0 /* inputCostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputCostsViewController.swift; sourceTree = "<group>"; };
+		7304705F255E088700A607B0 /* editCostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCostsViewController.swift; sourceTree = "<group>"; };
 		734144DF252D27F100CF2A96 /* HouseEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseEditViewController.swift; sourceTree = "<group>"; };
 		738BB3AA2522A10000CE23E7 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		738BB3B12522ADB200CE23E7 /* InputHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHouseViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 				734144DF252D27F100CF2A96 /* HouseEditViewController.swift */,
 				738BB3AA2522A10000CE23E7 /* House.swift */,
 				73980DA8251A9B2300146164 /* Main.storyboard */,
+				73047059255E085800A607B0 /* costsViewController.swift */,
+				7304705C255E087600A607B0 /* inputCostsViewController.swift */,
+				7304705F255E088700A607B0 /* editCostsViewController.swift */,
 				73D780492554B0BF00E740A3 /* EditTasksViewController.swift */,
 				73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */,
 				73DF2E75254C9E3100B36A11 /* TasksViewController.swift */,
@@ -234,13 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7304705D255E087600A607B0 /* inputCostsViewController.swift in Sources */,
 				73980DA7251A9B2300146164 /* ViewController.swift in Sources */,
 				73DF2E76254C9E3100B36A11 /* TasksViewController.swift in Sources */,
 				73DF2E79254CC2F100B36A11 /* inputTaskViewController.swift in Sources */,
+				7304705A255E085800A607B0 /* costsViewController.swift in Sources */,
 				73980DA3251A9B2300146164 /* AppDelegate.swift in Sources */,
 				738BB3AB2522A10000CE23E7 /* House.swift in Sources */,
 				73980DA5251A9B2300146164 /* SceneDelegate.swift in Sources */,
 				738BB3B22522ADB200CE23E7 /* InputHouseViewController.swift in Sources */,
+				73047060255E088700A607B0 /* editCostsViewController.swift in Sources */,
 				73A2AB4A252D0D3700BC80E7 /* MyTableViewCell.swift in Sources */,
 				734144E0252D27F100CF2A96 /* HouseEditViewController.swift in Sources */,
 				73D7804A2554B0BF00E740A3 /* EditTasksViewController.swift in Sources */,
