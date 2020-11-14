@@ -8,22 +8,29 @@
 import UIKit
 
 class editCostsViewController: UIViewController {
-
+    var myDict:[String:Any] = [:]
+    @IBAction func backFromEditCost(_ sender: Any) {
+        self.performSegue(withIdentifier: "backFromEditCosts", sender: self)
+    }
+    
+    @IBAction func updateCost(_ sender: Any) {
+    }
+    
+    @IBAction func deleteCost(_ sender: Any) {
+        self.performSegue(withIdentifier: "backFromEditCosts", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backFromEditCosts" {
+            let destinationController = segue.destination as! costsViewController
+            destinationController.myDict = myDict
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

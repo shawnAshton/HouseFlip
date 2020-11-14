@@ -6,24 +6,92 @@
 //
 
 import UIKit
+import Firebase
 
-class costsViewController: UIViewController {
+class costsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MyTableViewCellDelegate {
+
+    @IBOutlet weak var myTableView: UITableView!
+    var myDict:[String:Any] = [:]
+    var myCosts = [[String:Any]]()
+    var indexOfCost = -1
+    
+    func didTapCell(with index: Int) {
+        print("tapped \(index)")
+        indexOfCost = index
+        self.performSegue(withIdentifier: "toEditCosts", sender: self)
+        
+    }
+
+    @IBAction func backFromCosts(_ sender: Any) {
+        self.performSegue(withIdentifier: "backFromCosts", sender: self)
+    }
+    
+    @IBAction func toAddCosts(_ sender: Any) {
+        self.performSegue(withIdentifier: "toAddCost", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backFromCosts"{
+            let destinationController = segue.destination as! HouseEditViewController
+            destinationController.myDict = myDict
+        }
+        else if segue.identifier == "toAddCost" {
+            let destinationController = segue.destination as! inputCostsViewController
+            destinationController.myDict = myDict
+        }
+        else if segue.identifier == "toEditCosts" {
+            let destinationController = segue.destination as! editCostsViewController
+            destinationController.myDict = myDict
+        }
+        
+    }
+    //This function loads the tasks into the tableView
+    func loadCosts()
+    {
+        db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").order(by: "costAmount").getDocuments() {
+            snapshot, error in
+            if let error = error {
+                print("***************************************************\(error.localizedDescription)")
+            }else{
+                for document in snapshot!.documents{
+                    let documentData = document.data()
+                    self.myCosts.append(documentData)
+                }
+                
+                DispatchQueue.main.async { //updates screen
+                    self.myTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
+    //these 3 functions are for the tableview
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myCosts.count
+    } //creates custom cells to fill the tableView
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.indentifier, for: indexPath) as! MyTableViewCell
+
+        var cellTitle:String = (myCosts[indexPath.row]["costDescription"] as! String)
+        if cellTitle.count > 30{
+            cellTitle = cellTitle.prefix(30) + "..."
+        }
+        cellTitle = "$" + (myCosts[indexPath.row]["costAmount"] as! String) + " - " + cellTitle
+        cell.configure(with: cellTitle, with: indexPath.row)
+        cell.delegate = self
+        return cell
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadCosts()
+        myTableView.dataSource = self
+        myTableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.indentifier)
+        myTableView.delegate = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

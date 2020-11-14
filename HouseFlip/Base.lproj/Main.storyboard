@@ -293,6 +293,9 @@
                                 <state key="normal" title="Back" image="arrowshape.turn.up.backward" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="backFromAddCost:" destination="Y0p-lS-w0u" eventType="touchUpInside" id="1nY-VY-etC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phv-Vf-4yl">
                                 <rect key="frame" x="101.33333333333331" y="20" width="73.666666666666686" height="22"/>
@@ -300,28 +303,31 @@
                                 <state key="normal" title="Submit" image="arrow.up.to.line.alt" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitNewCost:" destination="Y0p-lS-w0u" eventType="touchUpInside" id="tcG-zb-46g"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jg8-Ed-XgP">
-                                <rect key="frame" x="32.999999999999972" y="118" width="240" height="162"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jg8-Ed-XgP">
+                                <rect key="frame" x="10" y="100" width="394" height="636"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-3U-1Q2">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-3U-1Q2">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEj-ME-LAh">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJb-DY-xuS">
-                                                <rect key="frame" x="104.33333333333333" y="0.0" width="135.66666666666669" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9999.99" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJb-DY-xuS">
+                                                <rect key="frame" x="109.33333333333334" y="0.0" width="284.66666666666663" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-4h-Cqe" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
-                                        <rect key="frame" x="0.0" y="34" width="240" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-4h-Cqe" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                        <rect key="frame" x="0.0" y="34" width="394" height="602"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -338,11 +344,17 @@
                         <constraints>
                             <constraint firstItem="Phv-Vf-4yl" firstAttribute="top" secondItem="zCX-fn-l5j" secondAttribute="top" constant="20" id="8Aj-g8-qvq"/>
                             <constraint firstItem="T9Q-Nz-Sc2" firstAttribute="leading" secondItem="zCX-fn-l5j" secondAttribute="leading" constant="20" id="Gy5-Ut-zEi"/>
+                            <constraint firstItem="zCX-fn-l5j" firstAttribute="bottom" secondItem="Jg8-Ed-XgP" secondAttribute="bottom" id="W6x-Pu-xCI"/>
                             <constraint firstItem="Phv-Vf-4yl" firstAttribute="leading" secondItem="T9Q-Nz-Sc2" secondAttribute="trailing" constant="20" id="a3M-hV-sc1"/>
+                            <constraint firstItem="Jg8-Ed-XgP" firstAttribute="top" secondItem="fNV-xh-tX3" secondAttribute="topMargin" constant="100" id="jj5-Rb-ayO"/>
+                            <constraint firstItem="zCX-fn-l5j" firstAttribute="trailing" secondItem="Jg8-Ed-XgP" secondAttribute="trailing" constant="10" id="pLl-2Q-95F"/>
                             <constraint firstItem="T9Q-Nz-Sc2" firstAttribute="top" secondItem="zCX-fn-l5j" secondAttribute="top" constant="20" id="paG-Hl-ZCn"/>
+                            <constraint firstItem="Jg8-Ed-XgP" firstAttribute="leading" secondItem="zCX-fn-l5j" secondAttribute="leading" constant="10" id="q3j-QB-yUw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="costAmount" destination="vJb-DY-xuS" id="jUe-bC-dzm"/>
+                        <outlet property="costDescription" destination="Uad-4h-Cqe" id="5E1-Dj-bz1"/>
                         <segue destination="ApF-GJ-siP" kind="presentation" identifier="backFromAddCost" modalPresentationStyle="currentContext" id="kA4-e7-RM5"/>
                     </connections>
                 </viewController>
@@ -364,6 +376,9 @@
                                 <state key="normal" title="Back" image="arrowshape.turn.up.backward" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="backFromCosts:" destination="ApF-GJ-siP" eventType="touchUpInside" id="XSG-iH-2s2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-rX-9hT">
                                 <rect key="frame" x="102" y="20" width="95" height="22"/>
@@ -371,6 +386,9 @@
                                 <state key="normal" title="Add Cost" image="dollarsign.circle" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="toAddCosts:" destination="ApF-GJ-siP" eventType="touchUpInside" id="apw-h6-2d4"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-DD-ZFh">
                                 <rect key="frame" x="0.0" y="62" width="414" height="674"/>
@@ -391,6 +409,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myTableView" destination="1vJ-DD-ZFh" id="EsV-Lo-bXg"/>
                         <segue destination="Y0p-lS-w0u" kind="presentation" identifier="toAddCost" modalPresentationStyle="currentContext" id="ewp-Yt-1cf"/>
                         <segue destination="c7K-md-yqR" kind="presentation" identifier="toEditCosts" modalPresentationStyle="currentContext" id="2So-Ey-Tfm"/>
                         <segue destination="0NH-35-Hfp" kind="presentation" identifier="backFromCosts" modalPresentationStyle="currentContext" id="cz9-r6-vtc"/>
@@ -414,6 +433,9 @@
                                 <state key="normal" title="Back" image="arrowshape.turn.up.backward" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="backFromEditCost:" destination="c7K-md-yqR" eventType="touchUpInside" id="Zaa-mG-EiQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23C-ff-J83">
                                 <rect key="frame" x="101.33333333333331" y="20" width="76.666666666666686" height="22"/>
@@ -421,6 +443,9 @@
                                 <state key="normal" title="Update" image="arrow.up" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateCost:" destination="c7K-md-yqR" eventType="touchUpInside" id="cqg-C0-SYT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiV-ee-ydx">
                                 <rect key="frame" x="198" y="20" width="71" height="22"/>
@@ -428,29 +453,31 @@
                                 <state key="normal" title="Delete" image="trash" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteCost:" destination="c7K-md-yqR" eventType="touchUpInside" id="2I4-4f-r2R"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="REk-4z-wd6">
-                                <rect key="frame" x="59" y="158" width="240" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qud-Td-2Uu">
+                                <rect key="frame" x="10" y="100" width="394" height="636"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-lk-FHC">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Uy-HE-ASt">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc8-yl-fxa">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8x-tO-dZq">
-                                                <rect key="frame" x="104.33333333333333" y="0.0" width="135.66666666666669" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9999.99" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8x-tO-dZq">
+                                                <rect key="frame" x="109.33333333333334" y="0.0" width="284.66666666666663" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ubg-mc-l0h" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
-                                        <rect key="frame" x="0.0" y="34" width="240" height="128"/>
+                                        <rect key="frame" x="0.0" y="34" width="394" height="602"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -460,7 +487,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                 </subviews>
-                                <viewLayoutGuide key="safeArea" id="QBv-uv-q5g"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lzP-IG-1gJ"/>
@@ -471,6 +497,10 @@
                             <constraint firstItem="dgg-ZD-cjO" firstAttribute="top" secondItem="lzP-IG-1gJ" secondAttribute="top" constant="20" id="MOH-ME-ayC"/>
                             <constraint firstItem="eiV-ee-ydx" firstAttribute="leading" secondItem="23C-ff-J83" secondAttribute="trailing" constant="20" id="R6H-QU-arE"/>
                             <constraint firstItem="23C-ff-J83" firstAttribute="leading" secondItem="dgg-ZD-cjO" secondAttribute="trailing" constant="20" id="Te0-f9-Puf"/>
+                            <constraint firstItem="lzP-IG-1gJ" firstAttribute="trailing" secondItem="qud-Td-2Uu" secondAttribute="trailing" constant="10" id="ZSv-FL-tED"/>
+                            <constraint firstItem="qud-Td-2Uu" firstAttribute="leading" secondItem="lzP-IG-1gJ" secondAttribute="leading" constant="10" id="aVf-0V-Bak"/>
+                            <constraint firstItem="lzP-IG-1gJ" firstAttribute="bottom" secondItem="qud-Td-2Uu" secondAttribute="bottom" id="gAM-LT-70i"/>
+                            <constraint firstItem="qud-Td-2Uu" firstAttribute="top" secondItem="hpE-LV-r4J" secondAttribute="topMargin" constant="100" id="qTg-l4-xmO"/>
                             <constraint firstItem="eiV-ee-ydx" firstAttribute="top" secondItem="lzP-IG-1gJ" secondAttribute="top" constant="20" id="vVv-9x-S2f"/>
                         </constraints>
                     </view>
@@ -480,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtN-BP-3kI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="1608"/>
+            <point key="canvasLocation" x="-230.43478260869566" y="1607.608695652174"/>
         </scene>
         <!--House Edit View Controller-->
         <scene sceneID="w4a-3x-v4h">
@@ -670,6 +700,9 @@
                                 <state key="normal" title="Costs" image="dollarsign.circle" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="toCosts:" destination="0NH-35-Hfp" eventType="touchUpInside" id="WzS-Dk-cYG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fGt-g7-jJv"/>
@@ -966,9 +999,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s3D-w4-TFn"/>
+        <segue reference="Oa7-1c-gED"/>
         <segue reference="cz9-r6-vtc"/>
-        <segue reference="bG1-Dy-UTS"/>
+        <segue reference="g2m-8r-1dJ"/>
         <segue reference="R04-qz-I1x"/>
     </inferredMetricsTieBreakers>
     <resources>

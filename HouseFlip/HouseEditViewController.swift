@@ -58,11 +58,20 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToTasks" {
+        if segue.identifier == "goToTasks"{
             let destinationController = segue.destination as! TasksViewController
             destinationController.myDict = myDict
         }
+        else if segue.identifier == "toCosts" {
+            let destinationController = segue.destination as! costsViewController
+            destinationController.myDict = myDict
+        }
     }
+    
+    @IBAction func toCosts(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCosts", sender: self)
+    }
+    
     
     //changes screens
     @IBAction func goBack(_ sender: Any) {
