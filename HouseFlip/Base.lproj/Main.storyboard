@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="gps-IL-L9s">
-                                <rect key="frame" x="20" y="61" width="317" height="32"/>
+                                <rect key="frame" x="20" y="61" width="337" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <segments>
@@ -391,25 +391,45 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-DD-ZFh">
-                                <rect key="frame" x="0.0" y="62" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Investments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktP-ln-Ent">
+                                <rect key="frame" x="140.33333333333337" y="47" width="133.66666666666663" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="134500" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af5-o5-x0o">
+                                <rect key="frame" x="0.0" y="73" width="414" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZFX-aF-fnp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="leading" secondItem="ZFX-aF-fnp" secondAttribute="leading" id="1Bm-cE-G2b"/>
                             <constraint firstItem="hNy-rX-9hT" firstAttribute="top" secondItem="ZFX-aF-fnp" secondAttribute="top" constant="20" id="2L3-Vi-F8c"/>
+                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="trailing" secondItem="ZFX-aF-fnp" secondAttribute="trailing" id="2mu-eS-TV8"/>
+                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="top" secondItem="af5-o5-x0o" secondAttribute="bottom" constant="5" id="9Wb-x8-rtX"/>
+                            <constraint firstItem="ktP-ln-Ent" firstAttribute="centerX" secondItem="TLG-bQ-Hms" secondAttribute="centerX" id="AKU-St-Nbu"/>
+                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="bottom" secondItem="ZFX-aF-fnp" secondAttribute="bottom" id="CTq-8L-vRS"/>
                             <constraint firstItem="1UR-kz-8ym" firstAttribute="top" secondItem="ZFX-aF-fnp" secondAttribute="top" constant="20" id="DDY-4J-hpZ"/>
-                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="trailing" secondItem="ZFX-aF-fnp" secondAttribute="trailing" id="EV5-9s-WwC"/>
-                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="leading" secondItem="ZFX-aF-fnp" secondAttribute="leading" id="MEK-u6-BEO"/>
+                            <constraint firstItem="af5-o5-x0o" firstAttribute="trailing" secondItem="ZFX-aF-fnp" secondAttribute="trailing" id="EL1-q0-ggn"/>
                             <constraint firstItem="hNy-rX-9hT" firstAttribute="leading" secondItem="1UR-kz-8ym" secondAttribute="trailing" constant="20" id="VhV-Os-WWT"/>
-                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="bottom" secondItem="ZFX-aF-fnp" secondAttribute="bottom" id="cq3-v4-lHX"/>
+                            <constraint firstItem="ktP-ln-Ent" firstAttribute="top" secondItem="hNy-rX-9hT" secondAttribute="bottom" constant="5" id="aKe-ch-8Np"/>
+                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="top" secondItem="1UR-kz-8ym" secondAttribute="bottom" constant="60" id="h4Y-ae-vES"/>
                             <constraint firstItem="1UR-kz-8ym" firstAttribute="leading" secondItem="ZFX-aF-fnp" secondAttribute="leading" constant="20" id="ifJ-eO-hha"/>
-                            <constraint firstItem="1vJ-DD-ZFh" firstAttribute="top" secondItem="1UR-kz-8ym" secondAttribute="bottom" constant="20" id="wEe-qS-XPh"/>
+                            <constraint firstItem="af5-o5-x0o" firstAttribute="leading" secondItem="ZFX-aF-fnp" secondAttribute="leading" id="kuP-ll-M9I"/>
+                            <constraint firstItem="af5-o5-x0o" firstAttribute="top" secondItem="ktP-ln-Ent" secondAttribute="bottom" constant="5" id="l0e-do-vlE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="1vJ-DD-ZFh" id="EsV-Lo-bXg"/>
+                        <outlet property="totalInvestments" destination="af5-o5-x0o" id="xsZ-S0-sDP"/>
                         <segue destination="Y0p-lS-w0u" kind="presentation" identifier="toAddCost" modalPresentationStyle="currentContext" id="ewp-Yt-1cf"/>
                         <segue destination="c7K-md-yqR" kind="presentation" identifier="toEditCosts" modalPresentationStyle="currentContext" id="2So-Ey-Tfm"/>
                         <segue destination="0NH-35-Hfp" kind="presentation" identifier="backFromCosts" modalPresentationStyle="currentContext" id="cz9-r6-vtc"/>
@@ -505,6 +525,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="costAmount" destination="f8x-tO-dZq" id="557-hg-raj"/>
+                        <outlet property="costDescription" destination="Ubg-mc-l0h" id="W4y-a5-64Y"/>
                         <segue destination="ApF-GJ-siP" kind="presentation" identifier="backFromEditCosts" modalPresentationStyle="currentContext" id="g2m-8r-1dJ"/>
                     </connections>
                 </viewController>
@@ -999,9 +1021,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Oa7-1c-gED"/>
+        <segue reference="s3D-w4-TFn"/>
         <segue reference="cz9-r6-vtc"/>
-        <segue reference="g2m-8r-1dJ"/>
+        <segue reference="bG1-Dy-UTS"/>
         <segue reference="R04-qz-I1x"/>
     </inferredMetricsTieBreakers>
     <resources>

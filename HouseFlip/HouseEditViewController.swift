@@ -51,6 +51,7 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
         let dic = ["address":addressTextField.text!, "owner":ownerTextField.text!, "price":priceTextField.text!, "purchaseDate":purchaseDate.date, "houseNotes":houseNotes.text!, "category":categorySelector.selectedSegmentIndex] as [String : Any]
         //merge with db. (merge doesnt overwrite the id tag)
         db.collection("ShawnTest").document(myDict["id"] as! String).setData(dic, merge: true)
+        self.performSegue(withIdentifier: "goBack", sender: self)
     }
     
     @IBAction func goToTasks(_ sender: Any) {

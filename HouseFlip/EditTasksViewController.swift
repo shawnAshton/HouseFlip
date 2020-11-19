@@ -34,6 +34,7 @@ class EditTasksViewController: UIViewController {
         dic["dueDate"] = dueDate.date
         dic["taskDescription"] = taskDescription.text!
         db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document(taskDict["id"] as! String).setData(dic, merge: true)
+        self.performSegue(withIdentifier: "backToTasks", sender: self)
     }
     
     @IBAction func deleteTask(_ sender: Any) {

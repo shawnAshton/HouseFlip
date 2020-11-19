@@ -10,10 +10,12 @@ import Firebase
 
 class costsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MyTableViewCellDelegate {
 
+    @IBOutlet weak var totalInvestments: UITextView!
     @IBOutlet weak var myTableView: UITableView!
     var myDict:[String:Any] = [:]
     var myCosts = [[String:Any]]()
     var indexOfCost = -1
+    var totalInvestmentsVar = 0.0
     
     func didTapCell(with index: Int) {
         print("tapped \(index)")
@@ -42,23 +44,30 @@ class costsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if segue.identifier == "toEditCosts" {
             let destinationController = segue.destination as! editCostsViewController
             destinationController.myDict = myDict
+            destinationController.costDict = myCosts[indexOfCost]
         }
         
     }
     //This function loads the tasks into the tableView
     func loadCosts()
     {
+        totalInvestmentsVar = 0.0
         db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").order(by: "costAmount").getDocuments() {
             snapshot, error in
             if let error = error {
                 print("***************************************************\(error.localizedDescription)")
             }else{
                 for document in snapshot!.documents{
+                    //create Dict of costs
                     let documentData = document.data()
                     self.myCosts.append(documentData)
+                    //create total of costs
+                    self.totalInvestmentsVar += Double(documentData["costAmount"] as! String)!
+                    print("loadingCosts - \(self.totalInvestmentsVar)")
+                    //self.totalInvestments.text = String(self.totalInvestmentsVar)
                 }
-                
                 DispatchQueue.main.async { //updates screen
+                    self.totalInvestments.text = "$\(self.totalInvestmentsVar)"
                     self.myTableView.reloadData()
                 }
             }
@@ -87,11 +96,11 @@ class costsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         loadCosts()
         myTableView.dataSource = self
         myTableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.indentifier)
         myTableView.delegate = self
+        super.viewDidLoad()
     }
 
 }
