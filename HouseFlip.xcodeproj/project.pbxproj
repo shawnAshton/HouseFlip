@@ -11,6 +11,7 @@
 		7304705D255E087600A607B0 /* inputCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304705C255E087600A607B0 /* inputCostsViewController.swift */; };
 		73047060255E088700A607B0 /* editCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304705F255E088700A607B0 /* editCostsViewController.swift */; };
 		734144E0252D27F100CF2A96 /* HouseEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734144DF252D27F100CF2A96 /* HouseEditViewController.swift */; };
+		734348B425689EF50090863F /* OfferEstimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734348B325689EF50090863F /* OfferEstimatorViewController.swift */; };
 		738BB3AB2522A10000CE23E7 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BB3AA2522A10000CE23E7 /* House.swift */; };
 		738BB3B22522ADB200CE23E7 /* InputHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BB3B12522ADB200CE23E7 /* InputHouseViewController.swift */; };
 		73980DA3251A9B2300146164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73980DA2251A9B2300146164 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		7304705C255E087600A607B0 /* inputCostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputCostsViewController.swift; sourceTree = "<group>"; };
 		7304705F255E088700A607B0 /* editCostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCostsViewController.swift; sourceTree = "<group>"; };
 		734144DF252D27F100CF2A96 /* HouseEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseEditViewController.swift; sourceTree = "<group>"; };
+		734348B325689EF50090863F /* OfferEstimatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferEstimatorViewController.swift; sourceTree = "<group>"; };
 		738BB3AA2522A10000CE23E7 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		738BB3B12522ADB200CE23E7 /* InputHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHouseViewController.swift; sourceTree = "<group>"; };
 		73980D9F251A9B2300146164 /* HouseFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				734144DF252D27F100CF2A96 /* HouseEditViewController.swift */,
 				738BB3AA2522A10000CE23E7 /* House.swift */,
 				73980DA8251A9B2300146164 /* Main.storyboard */,
+				734348B325689EF50090863F /* OfferEstimatorViewController.swift */,
 				73047059255E085800A607B0 /* costsViewController.swift */,
 				7304705C255E087600A607B0 /* inputCostsViewController.swift */,
 				7304705F255E088700A607B0 /* editCostsViewController.swift */,
@@ -247,6 +250,7 @@
 				73980DA7251A9B2300146164 /* ViewController.swift in Sources */,
 				73DF2E76254C9E3100B36A11 /* TasksViewController.swift in Sources */,
 				73DF2E79254CC2F100B36A11 /* inputTaskViewController.swift in Sources */,
+				734348B425689EF50090863F /* OfferEstimatorViewController.swift in Sources */,
 				7304705A255E085800A607B0 /* costsViewController.swift in Sources */,
 				73980DA3251A9B2300146164 /* AppDelegate.swift in Sources */,
 				738BB3AB2522A10000CE23E7 /* House.swift in Sources */,
