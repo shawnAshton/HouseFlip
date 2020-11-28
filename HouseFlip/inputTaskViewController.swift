@@ -22,6 +22,7 @@ class inputTaskViewController: UIViewController {
         
         //adds the task to the tasks collection of the specific home.
         let myDoc = db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document()
+        dic["houseid"] = myDict["id"] as! String
         dic["id"] = myDoc.documentID
         dic["dueDate"] = dueDate.date
         dic["taskDescription"] = taskDescription.text!

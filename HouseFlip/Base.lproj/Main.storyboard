@@ -164,7 +164,50 @@
                     <viewLayoutGuide key="safeArea" id="hpk-va-Qn1"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="563.768115942029" y="-863.31521739130437"/>
+            <point key="canvasLocation" x="529" y="-751"/>
+        </scene>
+        <!--All Tasks View Controller-->
+        <scene sceneID="iUD-xt-8VX">
+            <objects>
+                <viewController id="db1-td-N7N" customClass="AllTasksViewController" customModule="HouseFlip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cGO-sk-6D7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-LR-b4l">
+                                <rect key="frame" x="0.0" y="100" width="414" height="636"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5x-IH-0CV">
+                                <rect key="frame" x="5" y="27" width="76" height="22"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Back" image="arrowshape.turn.up.backward" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="currentContext" id="7gZ-Kh-TCn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xfA-eW-AEW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rio-LR-b4l" firstAttribute="leading" secondItem="xfA-eW-AEW" secondAttribute="leading" id="0IK-i8-YOj"/>
+                            <constraint firstItem="Rio-LR-b4l" firstAttribute="top" secondItem="xfA-eW-AEW" secondAttribute="top" constant="100" id="2iq-UD-TTG"/>
+                            <constraint firstItem="Q5x-IH-0CV" firstAttribute="leading" secondItem="xfA-eW-AEW" secondAttribute="leading" constant="20" id="ItH-PB-rtL"/>
+                            <constraint firstItem="xfA-eW-AEW" firstAttribute="trailing" secondItem="Rio-LR-b4l" secondAttribute="trailing" id="LCw-uX-yK4"/>
+                            <constraint firstItem="Q5x-IH-0CV" firstAttribute="top" secondItem="xfA-eW-AEW" secondAttribute="top" constant="20" id="SPn-Pr-8W2"/>
+                            <constraint firstItem="xfA-eW-AEW" firstAttribute="bottom" secondItem="Rio-LR-b4l" secondAttribute="bottom" id="VIc-j8-Z8D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTableView" destination="Rio-LR-b4l" id="FjT-Es-5Rr"/>
+                        <segue destination="mIF-BG-5DS" kind="presentation" identifier="allTasksToEditTask" modalPresentationStyle="currentContext" id="WPi-d1-eIf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cuy-45-Zfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339.13043478260875" y="63.586956521739133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -194,9 +237,9 @@
                                 <color key="separatorColor" systemColor="labelColor"/>
                             </tableView>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt8-1C-jRG">
-                                <rect key="frame" x="10" y="10" width="138" height="22"/>
+                                <rect key="frame" x="0.0" y="10" width="138" height="22"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="New Property">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -206,8 +249,9 @@
                                     <segue destination="2wt-t5-6C0" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="fX1-5m-0Me"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhr-Ef-KlK">
-                                <rect key="frame" x="155.66666666666669" y="10" width="150.66666666666669" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhr-Ef-KlK">
+                                <rect key="frame" x="136" y="11" width="125.66666666666666" height="19.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Offer Estimation" image="scribble" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -216,10 +260,23 @@
                                     <segue destination="21n-rn-tcv" kind="presentation" modalPresentationStyle="currentContext" id="3i8-Yx-NYV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFz-cf-TrY">
+                                <rect key="frame" x="269" y="10" width="97" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="All Tasks" image="pencil.and.outline" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="db1-td-N7N" kind="presentation" modalPresentationStyle="currentContext" id="33g-J3-hXM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jFz-cf-TrY" firstAttribute="leading" secondItem="Nhr-Ef-KlK" secondAttribute="trailing" constant="10" id="A53-2h-0QU"/>
+                            <constraint firstItem="jt8-1C-jRG" firstAttribute="height" secondItem="jFz-cf-TrY" secondAttribute="height" id="ENN-xu-wvb"/>
                             <constraint firstItem="jt8-1C-jRG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="JFa-az-pkA"/>
                             <constraint firstItem="eHf-cb-t1P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RkC-rb-hs9"/>
                             <constraint firstItem="eHf-cb-t1P" firstAttribute="top" secondItem="gps-IL-L9s" secondAttribute="bottom" id="U2s-96-bSG"/>
@@ -228,7 +285,9 @@
                             <constraint firstItem="Nhr-Ef-KlK" firstAttribute="leading" secondItem="jt8-1C-jRG" secondAttribute="trailing" constant="10" id="Xbh-H4-lKh"/>
                             <constraint firstItem="eHf-cb-t1P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y8G-k6-Bd2"/>
                             <constraint firstItem="Nhr-Ef-KlK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Z3S-n6-hAb"/>
+                            <constraint firstItem="jFz-cf-TrY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="eUt-q8-NJW"/>
                             <constraint firstItem="jt8-1C-jRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gsl-Q0-WXR"/>
+                            <constraint firstItem="jt8-1C-jRG" firstAttribute="height" secondItem="Nhr-Ef-KlK" secondAttribute="height" id="kvo-t1-5l9"/>
                             <constraint firstItem="gps-IL-L9s" firstAttribute="top" secondItem="jt8-1C-jRG" secondAttribute="bottom" constant="5" id="zDa-Sn-Clf"/>
                         </constraints>
                     </view>
@@ -1091,11 +1150,12 @@
                         <outlet property="dueDate" destination="1Xk-0J-oCh" id="oZY-YV-5F7"/>
                         <outlet property="taskDescription" destination="WJO-Mr-q1A" id="cHJ-Ff-sgv"/>
                         <segue destination="WWV-bQ-Eok" kind="presentation" identifier="backToTasks" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="HBa-88-VYP"/>
+                        <segue destination="db1-td-N7N" kind="presentation" identifier="backToAllTasks" modalPresentationStyle="currentContext" id="MTA-nK-dbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFi-N6-Sef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327.536231884058" y="1539.9456521739132"/>
+            <point key="canvasLocation" x="1328" y="1545"/>
         </scene>
         <!--Input Task View Controller-->
         <scene sceneID="36y-nt-1fc">
@@ -1192,10 +1252,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="WPi-d1-eIf"/>
         <segue reference="s3D-w4-TFn"/>
         <segue reference="MvI-eA-oUe"/>
-        <segue reference="g2m-8r-1dJ"/>
-        <segue reference="G02-oe-S3x"/>
+        <segue reference="bG1-Dy-UTS"/>
+        <segue reference="7gZ-Kh-TCn"/>
+        <segue reference="33g-J3-hXM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up" catalog="system" width="120" height="128"/>

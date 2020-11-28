@@ -12,13 +12,14 @@ class EditTasksViewController: UIViewController {
 
     var myDict:[String:Any] = [:] // for house
     var taskDict:[String:Any] = [:]
-    
+    var fromAllTasks = false
+    var segueName = ""
     
     @IBOutlet weak var dueDate: UIDatePicker!
     @IBOutlet weak var taskDescription: UITextView!
     
     @IBAction func goBack(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToTasks", sender: self)
+        self.performSegue(withIdentifier: segueName, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,13 +34,13 @@ class EditTasksViewController: UIViewController {
         //adds the task to the tasks collection of the specific home.
         dic["dueDate"] = dueDate.date
         dic["taskDescription"] = taskDescription.text!
-        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document(taskDict["id"] as! String).setData(dic, merge: true)
-        self.performSegue(withIdentifier: "backToTasks", sender: self)
+        db.collection("ShawnTest").document(taskDict["houseid"] as! String).collection("tasks").document(taskDict["id"] as! String).setData(dic, merge: true)
+        self.performSegue(withIdentifier: segueName, sender: self)
     }
     
     @IBAction func deleteTask(_ sender: Any) {
-        db.collection("ShawnTest").document(myDict["id"] as! String).collection("tasks").document(taskDict["id"] as! String).delete()
-        self.performSegue(withIdentifier: "backToTasks", sender: self)
+        db.collection("ShawnTest").document(taskDict["houseid"] as! String).collection("tasks").document(taskDict["id"] as! String).delete()
+        self.performSegue(withIdentifier: segueName, sender: self)
     }
     
     
@@ -50,6 +51,15 @@ class EditTasksViewController: UIViewController {
         let tsDate = taskDict["dueDate"] as! Timestamp //gets the firestore timestamp
         let myDate:Date = tsDate.dateValue() //converts to a swift date object
         dueDate.date = myDate
+        
+        if fromAllTasks == true
+        {
+            segueName = "backToAllTasks"
+        }
+        else
+        {
+            segueName = "backToTasks"
+        }
     }
 
 }

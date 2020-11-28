@@ -26,6 +26,7 @@
 		73D7804A2554B0BF00E740A3 /* EditTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D780492554B0BF00E740A3 /* EditTasksViewController.swift */; };
 		73DF2E76254C9E3100B36A11 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF2E75254C9E3100B36A11 /* TasksViewController.swift */; };
 		73DF2E79254CC2F100B36A11 /* inputTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */; };
+		73FB301D2571B555003E27F4 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FB301C2571B555003E27F4 /* AllTasksViewController.swift */; };
 		7A0165E5C0918B45AD765A20 /* Pods_HouseFlip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D74AF949F54186BA3A3540 /* Pods_HouseFlip.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		73D780492554B0BF00E740A3 /* EditTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTasksViewController.swift; sourceTree = "<group>"; };
 		73DF2E75254C9E3100B36A11 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		73DF2E78254CC2F100B36A11 /* inputTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputTaskViewController.swift; sourceTree = "<group>"; };
+		73FB301C2571B555003E27F4 /* AllTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
 		81D74AF949F54186BA3A3540 /* Pods_HouseFlip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseFlip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD356AC972BF2697F595FEC /* Pods-HouseFlip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HouseFlip.release.xcconfig"; path = "Target Support Files/Pods-HouseFlip/Pods-HouseFlip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				734144DF252D27F100CF2A96 /* HouseEditViewController.swift */,
 				738BB3AA2522A10000CE23E7 /* House.swift */,
 				73980DA8251A9B2300146164 /* Main.storyboard */,
+				73FB301C2571B555003E27F4 /* AllTasksViewController.swift */,
 				734348B325689EF50090863F /* OfferEstimatorViewController.swift */,
 				73047059255E085800A607B0 /* costsViewController.swift */,
 				7304705C255E087600A607B0 /* inputCostsViewController.swift */,
@@ -257,6 +260,7 @@
 				73980DA5251A9B2300146164 /* SceneDelegate.swift in Sources */,
 				738BB3B22522ADB200CE23E7 /* InputHouseViewController.swift in Sources */,
 				73047060255E088700A607B0 /* editCostsViewController.swift in Sources */,
+				73FB301D2571B555003E27F4 /* AllTasksViewController.swift in Sources */,
 				73A2AB4A252D0D3700BC80E7 /* MyTableViewCell.swift in Sources */,
 				734144E0252D27F100CF2A96 /* HouseEditViewController.swift in Sources */,
 				73D7804A2554B0BF00E740A3 /* EditTasksViewController.swift in Sources */,

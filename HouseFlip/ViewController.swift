@@ -7,6 +7,7 @@
 import UIKit
 import Firebase
 var db:Firestore!
+var accountName = "ShawnTest"
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var myTableView: UITableView!
