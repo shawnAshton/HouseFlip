@@ -12,5 +12,6 @@ target 'HouseFlip' do
 	pod 'TinyConstraints'
 	pod 'KMPlaceholderTextView'
 	pod 'LBTATools'
+	pod 'GoogleMaps'
 
 end

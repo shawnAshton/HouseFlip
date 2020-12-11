@@ -67,6 +67,10 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
             let destinationController = segue.destination as! costsViewController
             destinationController.myDict = myDict
         }
+        else if segue.identifier == "toEstimator" {
+            let destinationController = segue.destination as! OfferEstimatorViewController
+                destinationController.myDict = myDict
+        }
     }
     
     @IBAction func toCosts(_ sender: Any) {
@@ -106,6 +110,21 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
     func textViewDidEndEditing(_ textView: UITextView) {
         textView.backgroundColor = UIColor.white
         self.activeTextView = nil
+    }
+    
+
+    
+    @IBAction func openDirections(_ sender: Any) {
+        var address = ""
+        address = addressTextField.text!
+        address = address.replacingOccurrences(of: " ", with: "+")
+        let stringUrl = "http://maps.apple.com/?daddr=" + address + "&dirflg=d&t=h"
+        guard let url = URL(string: stringUrl) else {return}
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {

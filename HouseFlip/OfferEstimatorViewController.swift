@@ -8,6 +8,7 @@
 import UIKit
 
 class OfferEstimatorViewController: UIViewController {
+    var myDict:[String:Any] = [:]
     @IBOutlet weak var arvVal: UITextField!
     @IBOutlet weak var estimatedRepairCostVal: UITextField!
     @IBOutlet weak var percentOne: UILabel!
@@ -58,15 +59,47 @@ class OfferEstimatorViewController: UIViewController {
                                      arv-estimatedRepairCosts-(arv*slider1Val)-(arv*slider2Val))
     }
     
+    @IBAction func backFromEstimator(_ sender: Any) {
+        //db call to save estimates
+        //var dic:[String:Any] = [:]
+        let myDoc = db.collection("ShawnTest").document(myDict["id"] as! String)
+        myDict["arv"] = arvVal.text
+        myDict["estimatedRepair"] = estimatedRepairCostVal.text
+        myDict["slider1"] = slider1.value
+        myDict["slider2"] = slider2.value
+        myDoc.setData(myDict, merge: true)
+        
+        //perform segue
+        self.performSegue(withIdentifier: "backFromEstimator", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backFromEstimator" {
+            let destinationController = segue.destination as! HouseEditViewController
+            destinationController.myDict = myDict
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        percentOne.text = "10.0%"
-        percentTwo.text = "10.0%"
-        slider1.value = 10
-        slider2.value = 10
-        closingCosts.text = String(format: "Closing Costs(%.2f * \(slider1Val)) = %.2f" ,arv, slider1Val,(arv * slider1Val))
+
+        arvVal.text = myDict["arv"] as? String ?? "0"
+        estimatedRepairCostVal.text = myDict["estimatedRepair"] as? String ?? "0"
+        slider1.value = myDict["slider1"] as? Float ?? 10
+        slider2.value = myDict["slider2"] as? Float ?? 10
+        arv = Double(arvVal.text!) ?? 0.0
+        
+        let percent1:Float = Float(Int((slider1.value)*10)) / 10
+        percentOne.text = "\(percent1)%"
+        let percent2:Float = Float(Int((slider2.value)*10)) / 10
+        percentTwo.text = "\(percent2)%"
+        
+
+        closingCosts.text = String(format: "Closing Costs(%.2f * \(slider1Val)) = %.2f" ,arv, (arv * slider1Val))
         profitMargin.text = String(format: "Profit Margin(%.2f * \(slider2Val)) = %.2f" ,arv, (arv * slider2Val))
+        
         calculateSuggestedOffer()
 
         // Do any additional setup after loading the view.

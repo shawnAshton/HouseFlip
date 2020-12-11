@@ -21,6 +21,11 @@ struct House {
     var purchaseDate:Timestamp
     var houseNotes:String
     var category:Int
+    var arv:String
+    var estimatedRepair:String
+    var slider1:Float
+    var slider2:Float
+    
     
     var dictionary:[String:Any]{
         return [
@@ -30,7 +35,11 @@ struct House {
             "price": price,
             "purchaseDate" : purchaseDate,
             "houseNotes" : houseNotes,
-            "category": category
+            "category": category,
+            "arv" : arv,
+            "estimatedRepair" : estimatedRepair,
+            "slider1" : slider1,
+            "slider2" : slider2
         ]
     }
 }
@@ -45,7 +54,12 @@ extension House:documentSerializable{
               let houseNotes = dictionary["houseNotes"] as? String,
               let category = dictionary["category"] as? Int
             else {return nil}
+        let arv = dictionary["arv"] as? String ?? "0"
+        let estimatedRepair = dictionary["estimatedRepair"] as? String ?? "0"
+        let slider1 = dictionary["slider1"] as? Float ?? 0
+        let slider2 = dictionary["slider2"] as? Float ?? 0
         
-        self.init(id:id, address:address, owner:owner, price:price, purchaseDate:purchaseDate, houseNotes:houseNotes, category:category)
+        self.init(id:id, address:address, owner:owner, price:price, purchaseDate:purchaseDate, houseNotes:houseNotes, category:category, arv:arv, estimatedRepair:estimatedRepair,
+                  slider1:slider1, slider2:slider2)
     }
 }

@@ -96,6 +96,7 @@ class costsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     override func viewDidLoad() {
+        self.hideKeyboardWhenTappedAround()
         loadCosts()
         myTableView.dataSource = self
         myTableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.indentifier)
