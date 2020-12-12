@@ -1192,11 +1192,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="5jl-hu-0xW"/>
         <segue reference="WPi-d1-eIf"/>
         <segue reference="s3D-w4-TFn"/>
         <segue reference="UzH-re-ZIq"/>
         <segue reference="bG1-Dy-UTS"/>
-        <segue reference="R04-qz-I1x"/>
+        <segue reference="iCG-5m-IrZ"/>
         <segue reference="MTA-nK-dbe"/>
     </inferredMetricsTieBreakers>
     <resources>
