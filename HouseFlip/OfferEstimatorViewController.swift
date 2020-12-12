@@ -22,6 +22,7 @@ class OfferEstimatorViewController: UIViewController {
     var estimatedRepairCosts:Double = 0.0
     var slider1Val:Double = 0.1
     var slider2Val:Double = 0.1
+    var suggestedOfferValue = 0.0
     
     @IBAction func slider1DidSlide(_ sender: UISlider) {
         let percent:Float = Float(Int((sender.value)*10)) / 10
@@ -55,8 +56,9 @@ class OfferEstimatorViewController: UIViewController {
         estimatedRepairCosts = Double(estimatedRepairCostVal.text!) ?? 0.0
         slider1Val = Double(Int((slider1.value)*10)) / 1000
         slider2Val = Double(Int((slider2.value)*10)) / 1000
+        suggestedOfferValue = arv-estimatedRepairCosts-(arv*slider1Val)-(arv*slider2Val)
         suggestedOffer.text = String(format: "$%.2f(After Repair Value) \n- $%.2f(Estimated Repair Costs) \n- $%.2f(Closing Costs)\n- $%.2f(Profit Margin)\n\nSuggested Offer = $%.2f", arv,estimatedRepairCosts,arv*slider1Val,arv*slider2Val,
-                                     arv-estimatedRepairCosts-(arv*slider1Val)-(arv*slider2Val))
+                                     suggestedOfferValue)
     }
     
     @IBAction func backFromEstimator(_ sender: Any) {
@@ -80,6 +82,19 @@ class OfferEstimatorViewController: UIViewController {
             destinationController.myDict = myDict
         }
     }
+    
+    @IBAction func addOffer(_ sender: Any) {
+        calculateSuggestedOffer()
+        var dic:[String:Any] = [:]
+        dic["costAmount"] = String(format: "%.2f",suggestedOfferValue)
+        dic["costDescription"] = "House Offer"
+        dic["creationDate"] = Date()
+        let myDoc = db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").document()
+        dic["id"] = myDoc.documentID
+        myDoc.setData(dic, merge: true)
+        self.performSegue(withIdentifier: "backFromEstimator", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

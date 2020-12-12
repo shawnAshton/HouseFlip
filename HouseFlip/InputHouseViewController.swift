@@ -10,8 +10,8 @@ import UIKit
 class InputHouseViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var AddressField: UITextField!
-    @IBOutlet weak var OwnerField: UITextField!
-    @IBOutlet weak var PriceField: UITextField!
+    //@IBOutlet weak var OwnerField: UITextField!
+    //@IBOutlet weak var PriceField: UITextField!
     @IBOutlet weak var purchaseDate: UIDatePicker!
     @IBOutlet weak var houseNotes: UITextView!
     @IBOutlet weak var categorySelector: UISegmentedControl!
@@ -23,8 +23,8 @@ class InputHouseViewController: UIViewController, UITextViewDelegate, UITextFiel
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         AddressField.delegate = self
-        OwnerField.delegate = self
-        PriceField.delegate = self
+       // OwnerField.delegate = self
+       // PriceField.delegate = self
         houseNotes.delegate = self
         
        // the 2 notifications below are for helping move around the keyboard when typing
@@ -35,7 +35,7 @@ class InputHouseViewController: UIViewController, UITextViewDelegate, UITextFiel
     
     @IBAction func Submit(_ sender: Any) {
         //print("\(purchaseDate) was submited")
-        var dic = ["address":AddressField.text!, "owner":OwnerField.text!, "price":PriceField.text!, "purchaseDate":purchaseDate.date,
+        var dic = ["address":AddressField.text!, "purchaseDate":purchaseDate.date,
                    "houseNotes": houseNotes.text!, "category" :categorySelector.selectedSegmentIndex] as [String : Any]
         let myDoc = db.collection("ShawnTest").document()
         dic["id"] = myDoc.documentID    

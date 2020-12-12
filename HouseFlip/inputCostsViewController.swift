@@ -24,6 +24,7 @@ class inputCostsViewController: UIViewController, UITextViewDelegate {
         //regular expressions...
         //let range = NSRange(location:0, length: dic["costAmount"].count)
         //let regex = try! NSRegularExpression(pattern: "[0-9]+\.?[0-9]{0,2}")
+        dic["creationDate"] = Date()
         dic["costDescription"] = costDescription.text!
         let myDoc = db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").document()
         dic["id"] = myDoc.documentID

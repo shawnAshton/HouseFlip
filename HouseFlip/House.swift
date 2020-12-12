@@ -15,8 +15,6 @@ protocol documentSerializable {
 struct House {
     var id:String
     var address:String
-    var owner:String
-    var price:String
     //var purchaseDateAsTimeStamp:Date
     var purchaseDate:Timestamp
     var houseNotes:String
@@ -31,8 +29,6 @@ struct House {
         return [
             "id": id,
             "address": address,
-            "owner": owner,
-            "price": price,
             "purchaseDate" : purchaseDate,
             "houseNotes" : houseNotes,
             "category": category,
@@ -48,8 +44,6 @@ extension House:documentSerializable{
     init?(dictionary:[String:Any]){
         guard let id = dictionary["id"] as? String,
               let address = dictionary["address"] as? String,
-              let owner = dictionary["owner"] as? String,
-              let price = dictionary["price"] as? String,
               let purchaseDate = dictionary["purchaseDate"] as? Timestamp,
               let houseNotes = dictionary["houseNotes"] as? String,
               let category = dictionary["category"] as? Int
@@ -59,7 +53,7 @@ extension House:documentSerializable{
         let slider1 = dictionary["slider1"] as? Float ?? 0
         let slider2 = dictionary["slider2"] as? Float ?? 0
         
-        self.init(id:id, address:address, owner:owner, price:price, purchaseDate:purchaseDate, houseNotes:houseNotes, category:category, arv:arv, estimatedRepair:estimatedRepair,
+        self.init(id:id, address:address, purchaseDate:purchaseDate, houseNotes:houseNotes, category:category, arv:arv, estimatedRepair:estimatedRepair,
                   slider1:slider1, slider2:slider2)
     }
 }

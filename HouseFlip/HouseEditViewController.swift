@@ -12,8 +12,8 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
 
 
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var ownerTextField: UITextField!
-    @IBOutlet weak var priceTextField: UITextField!
+    //@IBOutlet weak var ownerTextField: UITextField!
+    //@IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var purchaseDate: UIDatePicker!
     @IBOutlet weak var houseNotes: UITextView!
     @IBOutlet weak var categorySelector: UISegmentedControl!
@@ -26,8 +26,8 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // pull info from Dictionary given from view controllers prepare function
-        priceTextField.text! = myDict["price"] as! String
-        ownerTextField.text! = myDict["owner"] as! String
+        //priceTextField.text! = myDict["price"] as! String
+        //ownerTextField.text! = myDict["owner"] as! String
         addressTextField.text! = myDict["address"] as! String
         let tsDate = myDict["purchaseDate"] as! Timestamp //gets the firestore timestamp
         let myDate:Date = tsDate.dateValue() //converts to a swift date object
@@ -37,8 +37,8 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
         
         //set up delegates
         addressTextField.delegate = self
-        ownerTextField.delegate = self
-        priceTextField.delegate = self
+        //ownerTextField.delegate = self
+        //priceTextField.delegate = self
         houseNotes.delegate = self
         
         // listeners for when the keyboard will appear and dissapear
@@ -48,7 +48,7 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
 
     //updates the information that was edited on the page
     @IBAction func updateHouse(_ sender: Any) {
-        let dic = ["address":addressTextField.text!, "owner":ownerTextField.text!, "price":priceTextField.text!, "purchaseDate":purchaseDate.date, "houseNotes":houseNotes.text!, "category":categorySelector.selectedSegmentIndex] as [String : Any]
+        let dic = ["address":addressTextField.text!, "purchaseDate":purchaseDate.date, "houseNotes":houseNotes.text!, "category":categorySelector.selectedSegmentIndex] as [String : Any]
         //merge with db. (merge doesnt overwrite the id tag)
         db.collection("ShawnTest").document(myDict["id"] as! String).setData(dic, merge: true)
         self.performSegue(withIdentifier: "goBack", sender: self)

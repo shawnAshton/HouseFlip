@@ -52,7 +52,7 @@ class costsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func loadCosts()
     {
         totalInvestmentsVar = 0.0
-        db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").order(by: "costAmount").getDocuments() {
+        db.collection("ShawnTest").document(myDict["id"] as! String).collection("costs").order(by: "creationDate").getDocuments() {
             snapshot, error in
             if let error = error {
                 print("***************************************************\(error.localizedDescription)")
@@ -63,7 +63,7 @@ class costsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.myCosts.append(documentData)
                     //create total of costs
                     self.totalInvestmentsVar += Double(documentData["costAmount"] as! String)!
-                    print("loadingCosts - \(self.totalInvestmentsVar)")
+                    //print("loadingCosts - \(self.totalInvestmentsVar)")
                     //self.totalInvestments.text = String(self.totalInvestmentsVar)
                 }
                 DispatchQueue.main.async { //updates screen
