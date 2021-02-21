@@ -139,7 +139,7 @@ class HouseEditViewController: UIViewController, UITextFieldDelegate, UITextView
           return
         }
 
-        var shouldMoveViewUp = false
+        var shouldMoveViewUp = false 
 
         // if active text field is not nil
         if let activeTextField = activeTextField {
